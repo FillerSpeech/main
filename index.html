@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+    <head>
+        <meta charset="utf-8">
+          <style type="text/css">
+                 a:link { color: black; text-decoration: none;}
+                 a:visited { color: black; text-decoration: none;}
+                 a:hover { color: blue; text-decoration: underline;}
+				 #player {width: 300px;}​
+           </style>
+           <style>
+            .masthead-heading {
+            text-align: center; 
+          }</style>
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>FillerSpeech Demo</title>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet">
+        <!-- Fonts CSS-->
+        <link rel="stylesheet" href="css/heading.css">
+        <link rel="stylesheet" href="css/body.css">
+        <!-- Bootstrap slider CSS -->
+        <!-- <link rel="stylesheet" href="css/bootstrap-slider.css"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css" integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ==" crossorigin="anonymous" />
+    </head>
+    <body id="page-top">
+        <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Audio Demos</a>
+                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">Abstract</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#style_control">Style Control</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header class="masthead bg-white text-left"> 
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading mb-0">FillerSpeech: Towards Human-Like Text-to-Speech Synthesis with Filler Injection and Filler Style Control</h1>
+                <!-- Masthead Subheading-->
+                <p class="pre-wrap lead">&nbsp;</p>
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Anonymous ACL Submission</p>
+            </div>
+        </header>
+
+        <!-- Abstraction -->
+        <section class="page-section portfolio" id="abstract">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Abstract</h2>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom"></div>
+                </div>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 ml-auto">
+                      <p class="pre-wrap lead">Recent advancements in speech synthesis have significantly improved the audio quality and pronunciation of synthesized speech. To further advance toward human-like conversational speech synthesis, this paper presents FillerSpeech, a novel speech synthesis framework that enables natural filler insertion and control over filler style. To address this, we construct a filler-inclusive speech data, derived from the open-source large-scale speech corpus. This data includes fillers with pitch and duration information. For the generation and style control of natural fillers, we propose a method that tokenizes filler style and utilizes cross-attention with the input text. Furthermore, we introduce a large language model-based filler prediction method that enables natural insertion of fillers even when only text input is provided. The experimental results demonstrate that the constructed dataset is valid and that our proposed methods for filler style control and filler prediction are effective. Our code and demo are available at https://fillerspeech.github.io/main.</p>
+                      <!-- <p class="pre-wrap lead">&nbsp;</p> -->
+                      <p class="pre-wrap lead">Official implementation of FillerSpeech: <a href="https://github.com/FillerSpeech/main">https://github.com/FillerSpeech/main</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+		<!-- Style Control -->
+        <section class="page-section bg-primary text-white mb-0" id="style_control">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block">Style Control</h2>
+					<p class="pre-wrap lead"></p>
+                </div>
+                <div class="divider-custom divider-light">
+					<!-- <p class="pre-wrap lead">Additional Text</p> -->
+                </div>
+                <div class="row justify-content-center">
+					<div class="row">
+						<div class="col-lg-12 ml-auto">
+							<table class="table table-responsive align-content-center"
+									style="background-color: whitesmoke; border-radius: 20px">
+								<thead>
+									<tr>
+										<th scope="col" class="text-center align-middle"></th>
+										<th scope="col" class="text-center align-middle">High</th>
+										<th scope="col" class="text-center align-middle">Medium</th>
+										<th scope="col" class="text-center align-middle">Low</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row" class="text-center align-middle">Long</th>
+										<td class="text-center align-middle">
+											<audio id="audio_long_high" controls>
+												<source src="audio/style_control/armadale_40_collins_64kb_118_long_oh_high.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="audio_long_medium" controls>
+												<source src="audio/style_control/armadale_40_collins_64kb_118_long_oh_medium.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="audio_long_low" controls>
+												<source src="audio/style_control/armadale_40_collins_64kb_118_long_oh_low.wav" type="audio/wav">
+											</audio>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="text-center align-middle">Medium</th>
+										<td class="text-center align-middle">
+											<audio id="audio_medium_high" controls>
+												<source src="audio/style_control/armadale_40_collins_64kb_118_medium_oh_high.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="audio_medium_medium" controls>
+												<source src="audio/style_control/armadale_40_collins_64kb_118_medium_oh_medium.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="audio_medium_low" controls>
+												<source src="audio/style_control/armadale_40_collins_64kb_118_medium_oh_low.wav" type="audio/wav">
+											</audio>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="text-center align-middle">Short</th>
+										<td class="text-center align-middle">
+											<audio id="audio_short_high" controls>
+												<source src="audio/style_control/armadale_40_collins_64kb_118_short_oh_high.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="audio_short_medium" controls>
+												<source src="audio/style_control/armadale_40_collins_64kb_118_short_oh_medium.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="audio_short_low" controls>
+												<source src="audio/style_control/armadale_40_collins_64kb_118_short_oh_low.wav" type="audio/wav">
+											</audio>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+				 
+				 
+
+							
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12 ml-auto">
+							<table class="table table-responsive align-content-center"
+							style="background-color: whitesmoke; border-radius: 20px">
+								<thead>
+									<tr>
+										<th scope="col" class="text-center align-middle"></th>
+										<th scope="col" class="text-center align-middle">High</th>
+										<th scope="col" class="text-center align-middle">Medium</th>
+										<th scope="col" class="text-center align-middle">Low</th>
+									</tr>
+								</thead>
+						
+								<tbody>
+									<tr>
+										<th scope="row" class="text-center align-middle">Long</th>
+										<td class="text-center align-middle">
+											<audio id="asr_gt_long_high" controls>
+												<source id="asr_src_gt_long_high"
+														src="audio/sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_gt_long_medium" controls>
+												<source id="asr_src_gt_long_medium"
+														src="audio/sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_input_long_low_2" controls>
+												<source id="asr_src_input_long_low_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+									</tr>
+						
+									<tr>
+										<th scope="row" class="text-center align-middle">Medium</th>
+										<td class="text-center align-middle">
+											<audio id="asr_input_medium_high_2" controls>
+												<source id="asr_src_input_medium_high_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_input_medium_medium_2" controls>
+												<source id="asr_src_input_medium_medium_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_input_medium_low_2" controls>
+												<source id="asr_src_input_medium_low_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+									</tr>
+						
+									<tr>
+										<th scope="row" class="text-center align-middle">Short</th>
+										<td class="text-center align-middle">
+											<audio id="asr_input_short_high_2" controls>
+												<source id="asr_src_input_short_high_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_input_short_medium_2" controls>
+												<source id="asr_src_input_short_medium_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_input_short_low_2" controls>
+												<source id="asr_src_input_short_low_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+				 
+
+							
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<section class="page-section bg-info text-white mb-0" id="style_control">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block">Style Control</h2>
+					<p class="pre-wrap lead"></p>
+                </div>
+                <div class="divider-custom divider-light">
+					<!-- <p class="pre-wrap lead">Additional Text</p> -->
+                </div>
+                <div class="row justify-content-center">
+					<div class="row">
+						<div class="col-lg-12 ml-auto">
+							<table class="table table-responsive align-content-center"
+							style="background-color: whitesmoke; border-radius: 20px">
+								<thead>
+									<tr>
+										<th scope="col" class="text-center align-middle"></th>
+										<th scope="col" class="text-center align-middle">High</th>
+										<th scope="col" class="text-center align-middle">Medium</th>
+										<th scope="col" class="text-center align-middle">Low</th>
+									</tr>
+								</thead>
+						
+								<tbody>
+									<tr>
+										<th scope="row" class="text-center align-middle">Long</th>
+										<td class="text-center align-middle">
+											<audio id="asr_gt_long_high" controls>
+												<source id="asr_src_gt_long_high"
+														src="audio/sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_gt_long_medium" controls>
+												<source id="asr_src_gt_long_medium"
+														src="audio/sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_input_long_low_2" controls>
+												<source id="asr_src_input_long_low_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+									</tr>
+						
+									<tr>
+										<th scope="row" class="text-center align-middle">Medium</th>
+										<td class="text-center align-middle">
+											<audio id="asr_input_medium_high_2" controls>
+												<source id="asr_src_input_medium_high_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_input_medium_medium_2" controls>
+												<source id="asr_src_input_medium_medium_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_input_medium_low_2" controls>
+												<source id="asr_src_input_medium_low_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+									</tr>
+						
+									<tr>
+										<th scope="row" class="text-center align-middle">Short</th>
+										<td class="text-center align-middle">
+											<audio id="asr_input_short_high_2" controls>
+												<source id="asr_src_input_short_high_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_input_short_medium_2" controls>
+												<source id="asr_src_input_short_medium_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_input_short_low_2" controls>
+												<source id="asr_src_input_short_low_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+				 
+
+							
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12 ml-auto">
+							<table class="table table-responsive align-content-center"
+							style="background-color: whitesmoke; border-radius: 20px">
+								<thead>
+									<tr>
+										<th scope="col" class="text-center align-middle"></th>
+										<th scope="col" class="text-center align-middle">High</th>
+										<th scope="col" class="text-center align-middle">Medium</th>
+										<th scope="col" class="text-center align-middle">Low</th>
+									</tr>
+								</thead>
+						
+								<tbody>
+									<tr>
+										<th scope="row" class="text-center align-middle">Long</th>
+										<td class="text-center align-middle">
+											<audio id="asr_gt_long_high" controls>
+												<source id="asr_src_gt_long_high"
+														src="audio/sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_gt_long_medium" controls>
+												<source id="asr_src_gt_long_medium"
+														src="audio/sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_input_long_low_2" controls>
+												<source id="asr_src_input_long_low_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+									</tr>
+						
+									<tr>
+										<th scope="row" class="text-center align-middle">Medium</th>
+										<td class="text-center align-middle">
+											<audio id="asr_input_medium_high_2" controls>
+												<source id="asr_src_input_medium_high_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_input_medium_medium_2" controls>
+												<source id="asr_src_input_medium_medium_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_input_medium_low_2" controls>
+												<source id="asr_src_input_medium_low_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+									</tr>
+						
+									<tr>
+										<th scope="row" class="text-center align-middle">Short</th>
+										<td class="text-center align-middle">
+											<audio id="asr_input_short_high_2" controls>
+												<source id="asr_src_input_short_high_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_input_short_medium_2" controls>
+												<source id="asr_src_input_short_medium_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="asr_input_short_low_2" controls>
+												<source id="asr_src_input_short_low_2"
+														src="sample"
+														type="audio/wav" />
+											</audio>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+				 
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+        <script src="js/scripts.js"></script>
+        <!-- Bootstrap slider JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous"></script>
+
+    </body>
+</html>
