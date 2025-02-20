@@ -1,0 +1,22 @@
+{   
+    "filler_prediction_1":[
+        "Target sentence: <TGT_SEN>\nUSER: Add the specified fillers (like <FILLER>) to the target sentence to make it sound more natural. For each filler, also specify its duration (short, medium, long) and pitch (low, medium, high) that sound contextually appropriate and natural.",
+        "Target sentence: <TGT_SEN>\nUSER: Make the target sentence sound more expressive and casual by adding the specified fillers (like <FILLER>). For each filler, also specify its duration (short, medium, long) and pitch (low, medium, high) that sound contextually appropriate and natural.",
+        "Target sentence: <TGT_SEN>\nUSER: Insert the specified fillers (like <FILLER>) at contextually appropriate positions in the sentence. For each filler, also specify its duration (short, medium, long) and pitch (low, medium, high) that sound contextually appropriate and natural."
+    ],
+    "filler_prediction_2":[
+        "Target sentence: <TGT_SEN>\nUSER: Add the specified fillers (like <FILLER>) at target positions <TGT_POS> in the target sentence. For each filler, also specify its duration (short, medium, long) and pitch (low, medium, high) that sound contextually appropriate and natural.",
+        "Target sentence: <TGT_SEN>\nUSER: Make the target sentence sound more expressive and casual by adding the specified fillers (like <FILLER>) at target positions <TGT_POS>. For each filler, also specify its duration (short, medium, long) and pitch (low, medium, high) that sound contextually appropriate and natural.",
+        "Target sentence: <TGT_SEN>\nUSER: Insert the specified fillers (like <FILLER>) at target positions <TGT_POS> in the target sentence. For each filler, also specify its duration (short, medium, long) and pitch (low, medium, high) that sound contextually appropriate and natural."
+    ],
+    "filler_prediction_3":[
+        "Target sentence: <TGT_SEN>\nFiller word options: oh, ah, ha, eh, aha, huh, hm, uh, yeah, mm, um, ya, well\nUSER: Add contextually appropriate fillers to the target sentence. For each filler, also specify its duration (short, medium, long) and pitch (low, medium, high) that sound contextually appropriate and natural.",
+        "Target sentence: <TGT_SEN>\nFiller word options: oh, ah, ha, eh, aha, huh, hm, uh, yeah, mm, um, ya, well\nUSER: Make the target sentence sound more expressive and casual by adding contextually appropriate fillers. For each filler, also specify its duration (short, medium, long) and pitch (low, medium, high) that sound contextually appropriate and natural.",
+        "Target sentence: <TGT_SEN>\nFiller word options: oh, ah, ha, eh, aha, huh, hm, uh, yeah, mm, um, ya, well\nUSER: Insert spontaneous fillers into the target sentence. For each filler, also specify its duration (short, medium, long) and pitch (low, medium, high) that sound contextually appropriate and natural."
+    ],
+    "filler_prediction_4":[
+        "Target sentence: <TGT_SEN>\nFiller word options: oh, ah, ha, eh, aha, huh, hm, uh, yeah, mm, um, ya, well\nUSER: Add contextually appropriate fillers at target positions <TGT_POS> in the target sentence. For each filler, also specify its duration (short, medium, long) and pitch (low, medium, high) that sound contextually appropriate and natural.",
+        "Target sentence: <TGT_SEN>\nFiller word options: oh, ah, ha, eh, aha, huh, hm, uh, yeah, mm, um, ya, well\nUSER: Make the target sentence sound more expressive and casual by adding contextually fillers at target positions <TGT_POS>. For each filler, also specify its duration (short, medium, long) and pitch (low, medium, high) that sound contextually appropriate and natural.",
+        "Target sentence: <TGT_SEN>\nFiller word options: oh, ah, ha, eh, aha, huh, hm, uh, yeah, mm, um, ya, well\nUSER: Insert contextually appropriate fillers at target positions <TGT_POS> in the target sentence. For each filler, also specify its duration (short, medium, long) and pitch (low, medium, high) that sound contextually appropriate and natural."
+    ]
+}

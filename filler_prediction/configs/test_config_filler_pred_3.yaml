@@ -1,0 +1,75 @@
+# Copyright (2024) Tsinghua University, Bytedance Ltd. and/or its affiliates
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+model:
+  filler_mode : "all" # filler prediction task # 어떤거 예측할지? # only_f, all, only_dur, only_pitch
+  pitch_type : "rel_f0" #"rel_f0" "abs_f0"
+
+  llama_path: "./ckpts/vicuna-7b-v1.5" # vicuna-7b-v1.5 ckpt here
+
+  # LoRA
+  lora: True
+  lora_ckpt: "./ckpts/checkpoint_best.pth" 
+
+  multi_prompt: True
+  prompt_template: "{}\nASSISTANT:"
+  prompt_path: "./prompts/filler_all_pred_train_prompt.json"
+  test_prompt_path: "./prompts/filler_all_pred_test_prompt.json"
+  max_txt_len: 300
+  end_sym: "</s>"
+
+datasets:
+  train_ann_path: "./data/filler_pred_train.json"
+  valid_ann_path: "./data/filler_pred_valid.json"
+  test_ann_path: "./data/filler_pred_test_3.json"
+
+run:
+  # log & settings
+  seed: 42
+  output_dir: "./logs/filler_pred"
+  evaluate: True # if True, only evaluate model on test data
+
+  log_freq: 5
+  epoch_based: False
+  iters_per_epoch: 3000 #3000
+  accum_grad_iters: 1
+  batch_size_train: 1 
+  batch_size_eval: 1 
+  num_workers: 8
+
+  device: "cuda"
+  use_distributed: True
+  amp: True
+  world_size: 1
+  dist_url: "env://"
+
+  # optimizer & scheduler
+  optims:
+    max_epoch: 100
+    warmup_steps: 3000
+    warmup_start_lr: 1e-6
+    init_lr: 3e-5
+    min_lr: 1e-5
+    weight_decay: 0.05
+    beta2: 0.999
+
+generate:
+  max_new_tokens: 200
+  num_beams: 4
+  do_sample: False
+  min_length: 1
+  temperature: 1.0
+  top_p: 0.9
+  repetition_penalty: 1.0
+  length_penalty: 1.0
