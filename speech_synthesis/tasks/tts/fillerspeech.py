@@ -35,9 +35,9 @@ def plot_attn(p_attn, base_fn, gen_dir):
         plt.savefig(f"{new_name}_h{head}.png", bbox_inches='tight', dpi=300)
         plt.close()
 
-class MatchaTTSTask(SpeechBaseTask):
+class FillerSpeechTask(SpeechBaseTask):
     def __init__(self):
-        super(MatchaTTSTask, self).__init__()
+        super(FillerSpeechTask, self).__init__()
         self.data_stats_mean = torch.tensor(self.hparams.data_ms_stats['mean'])
         self.data_stats_std  = torch.tensor(self.hparams.data_ms_stats['std'])
 
