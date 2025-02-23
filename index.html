@@ -39,6 +39,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">Abstract</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#speech_synthesis">Filler TTS</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#style_control">Style Control</a></li>
                         <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#comparison">Comparison</a></li> -->
                     </ul>
@@ -76,9 +77,289 @@
                 </div>
             </div>
         </section>
+		<!-- Filler TTS -->
+		<section class="page-section bg-primary text-white mb-0" id="comparison">
+					<div class="container">
+						<div class="text-center">
+							<h2 class="page-section-heading d-inline-block">Filler TTS</h2>
+							<p class="pre-wrap lead"></p>
+						</div>
+                <div class="divider-custom divider-light">
+                </div>
+                <div class="row justify-content-center">
+					<div class="row">
+						<div class="col-lg-12 ml-auto">
+							<table class="table table-responsive align-content-center"
+							style="background-color: whitesmoke; border-radius: 20px">
+						
+								<tbody>
+									<tr>
+										<th colspan="4" class="text-left align-middle">
+											Text: "&ltWell&gt, what are you having to drink?" "Beer," said Matheny without hesitation. "&ltHuh&gt? Look, Pal, this is on me."
+										</th>
+									</tr>
+
+									<tr>
+										<td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
+										<audio id="gt" controls >
+											<source src="audio/speech_synthesis/gt/ssf064_01_various_64kb_117.wav" type="audio/wav">
+										</audio>
+										</td>
+										<td><p><strong>Vocoded</strong></p>
+										<audio id="voc" controls >
+											<source src="audio/speech_synthesis/voc/ssf064_01_various_64kb_117.wav" type="audio/wav">
+										</audio>
+										</td>
+										<td><p><strong>Matcha-TTS</strong></p>
+											<audio id="voc" controls >
+												<source src="audio/speech_synthesis/v0/ssf064_01_various_64kb_117.wav" type="audio/wav">
+											</audio>
+										</td>
+									</tr>
+									<tr>
+										<td rowspan="1" style="vertical-align: top;"><p><strong>FillerSpeech w/o PP and CA</strong></p>
+										<audio id="v1" controls >
+											<source src="audio/speech_synthesis/v1/ssf064_01_various_64kb_117.wav" type="audio/wav" />
+										</audio>
+										</td>
+										<td><p><strong>FillerSpeech w/o CA</strong></p>
+										<audio id="v2" controls >
+											<source src="audio/speech_synthesis/v2/ssf064_01_various_64kb_117.wav" type="audio/wav" />
+										</audio>
+										</td>
+										<td><p><strong>FillerSpeech</strong></p>
+										<audio id="v3" controls >
+											<source src="audio/speech_synthesis/v3/ssf064_01_various_64kb_117.wav" type="audio/wav" />
+										</audio>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12 ml-auto">
+							<table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+								<tbody>
+									<tr>
+										<th colspan="4" class="text-left align-middle">
+											Text: "He rose and stood swaying, showing a stricken face. "&ltEh&gt?" Ducroy insisted with an accent of exasperation.
+										</th>
+									</tr>
+									<tr>
+										<td style="vertical-align: top;">
+											<p><strong>GT</strong></p>
+											<audio id="gt_case1" controls>
+												<source src="audio/speech_synthesis/gt/lonewolf_17_vance_64kb_78.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td>
+											<p><strong>Vocoded</strong></p>
+											<audio id="voc_case1" controls>
+												<source src="audio/speech_synthesis/voc/lonewolf_17_vance_64kb_78.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td>
+											<p><strong>Matcha-TTS</strong></p>
+											<audio id="matcha_case1" controls>
+												<source src="audio/speech_synthesis/v0/lonewolf_17_vance_64kb_78.wav" type="audio/wav">
+											</audio>
+										</td>
+									</tr>
+									<tr>
+										<td style="vertical-align: top;">
+											<p><strong>FillerSpeech w/o PP and CA</strong></p>
+											<audio id="v1_case1" controls>
+												<source src="audio/speech_synthesis/v1/lonewolf_17_vance_64kb_78.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td>
+											<p><strong>FillerSpeech w/o CA</strong></p>
+											<audio id="v2_case1" controls>
+												<source src="audio/speech_synthesis/v2/lonewolf_17_vance_64kb_78.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td>
+											<p><strong>FillerSpeech</strong></p>
+											<audio id="v3_case1" controls>
+												<source src="audio/speech_synthesis/v3/lonewolf_17_vance_64kb_78.wav" type="audio/wav">
+											</audio>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12 ml-auto">
+							<table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+								<tbody>
+									<tr>
+										<th colspan="4" class="text-left align-middle">
+											Text: "&ltHa&gt!" There was a sensation without. I could see that Emmeline recoiled from the side of her companion.
+										</th>
+									</tr>
+									<tr>
+										<td style="vertical-align: top;">
+											<p><strong>GT</strong></p>
+											<audio id="gt_case2" controls>
+												<source src="audio/speech_synthesis/gt/internationalshortstories1_25_patten_64kb_78.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td>
+											<p><strong>Vocoded</strong></p>
+											<audio id="voc_case2" controls>
+												<source src="audio/speech_synthesis/voc/internationalshortstories1_25_patten_64kb_78.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td>
+											<p><strong>Matcha-TTS</strong></p>
+											<audio id="matcha_case2" controls>
+												<source src="audio/speech_synthesis/v0/internationalshortstories1_25_patten_64kb_78.wav" type="audio/wav">
+											</audio>
+										</td>
+									</tr>
+									<tr>
+										<td style="vertical-align: top;">
+											<p><strong>FillerSpeech w/o PP and CA</strong></p>
+											<audio id="v1_case2" controls>
+												<source src="audio/speech_synthesis/v1/internationalshortstories1_25_patten_64kb_78.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td>
+											<p><strong>FillerSpeech w/o CA</strong></p>
+											<audio id="v2_case2" controls>
+												<source src="audio/speech_synthesis/v2/internationalshortstories1_25_patten_64kb_78.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td>
+											<p><strong>FillerSpeech</strong></p>
+											<audio id="v3_case2" controls>
+												<source src="audio/speech_synthesis/v3/internationalshortstories1_25_patten_64kb_78.wav" type="audio/wav">
+											</audio>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12 ml-auto">
+							<table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+								<tbody>
+									<tr>
+										<th colspan="4" class="text-left align-middle">
+											Text: "There are no bad shots on mars survival of the fittest, you know." Doran wet his lips. "&ltUh&gt, no hard feelings. No, none at all."
+										</th>
+									</tr>
+									<tr>
+										<td style="vertical-align: top;">
+											<p><strong>GT</strong></p>
+											<audio id="gt_case3" controls>
+												<source src="audio/speech_synthesis/gt/ssf064_01_various_64kb_214.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td>
+											<p><strong>Vocoded</strong></p>
+											<audio id="voc_case3" controls>
+												<source src="audio/speech_synthesis/voc/ssf064_01_various_64kb_214.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td>
+											<p><strong>Matcha-TTS</strong></p>
+											<audio id="matcha_case3" controls>
+												<source src="audio/speech_synthesis/v0/ssf064_01_various_64kb_214.wav" type="audio/wav">
+											</audio>
+										</td>
+									</tr>
+									<tr>
+										<td style="vertical-align: top;">
+											<p><strong>FillerSpeech w/o PP and CA</strong></p>
+											<audio id="v1_case3" controls>
+												<source src="audio/speech_synthesis/v1/ssf064_01_various_64kb_214.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td>
+											<p><strong>FillerSpeech w/o CA</strong></p>
+											<audio id="v2_case3" controls>
+												<source src="audio/speech_synthesis/v2/ssf064_01_various_64kb_214.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td>
+											<p><strong>FillerSpeech</strong></p>
+											<audio id="v3_case3" controls>
+												<source src="audio/speech_synthesis/v3/ssf064_01_various_64kb_214.wav" type="audio/wav">
+											</audio>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12 ml-auto">
+							<table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+								<tbody>
+									<tr>
+										<th colspan="4" class="text-left align-middle">
+											Text: "But what?" He asked, moodily. "What were you going to say?" Her eyes closed with pain. "&ltEh&gt?" He said.
+										</th>
+									</tr>
+									<tr>
+										<td style="vertical-align: top;">
+											<p><strong>GT</strong></p>
+											<audio id="gt_case4" controls>
+												<source src="audio/speech_synthesis/gt/stories_14_merrick_64kb_51.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td>
+											<p><strong>Vocoded</strong></p>
+											<audio id="voc_case4" controls>
+												<source src="audio/speech_synthesis/voc/stories_14_merrick_64kb_51.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td>
+											<p><strong>Matcha-TTS</strong></p>
+											<audio id="matcha_case4" controls>
+												<source src="audio/speech_synthesis/v0/stories_14_merrick_64kb_51.wav" type="audio/wav">
+											</audio>
+										</td>
+									</tr>
+									<tr>
+										<td style="vertical-align: top;">
+											<p><strong>FillerSpeech w/o PP and CA</strong></p>
+											<audio id="v1_case4" controls>
+												<source src="audio/speech_synthesis/v1/stories_14_merrick_64kb_51.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td>
+											<p><strong>FillerSpeech w/o CA</strong></p>
+											<audio id="v2_case4" controls>
+												<source src="audio/speech_synthesis/v2/stories_14_merrick_64kb_51.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td>
+											<p><strong>FillerSpeech</strong></p>
+											<audio id="v3_case4" controls>
+												<source src="audio/speech_synthesis/v3/stories_14_merrick_64kb_51.wav" type="audio/wav">
+											</audio>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
 
 		<!-- Style Control -->
-        <section class="page-section bg-primary text-white mb-0" id="style_control">
+        <section class="page-section bg-info text-white mb-0" id="style_control">
             <div class="container">
                 <div class="text-center">
                     <h2 class="page-section-heading d-inline-block">Style Control</h2>
@@ -164,6 +445,83 @@
 							</table>
 						</div>
 					</div>
+
+					<div class="row">
+						<div class="col-lg-12 ml-auto">
+							<table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+								<thead>
+									<tr>
+										<th colspan="4" class="text-left align-middle">
+											Text: "&ltWell&gt, what are you having to drink?" "Beer," said Matheny without hesitation. "&ltHuh&gt? Look, Pal, this is on me.
+										</th>
+									</tr>
+									<tr>
+										<th scope="col" class="text-center align-middle"></th>
+										<th scope="col" class="text-center align-middle">High</th>
+										<th scope="col" class="text-center align-middle">Medium</th>
+										<th scope="col" class="text-center align-middle">Low</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row" class="text-center align-middle">Long</th>
+										<td class="text-center align-middle">
+											<audio id="audio_long_high" controls>
+												<source src="audio/style_control/ssf064_01_various_64kb_117_long_well_huh_high.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="audio_long_medium" controls>
+												<source src="audio/style_control/ssf064_01_various_64kb_117_long_well_huh_medium.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="audio_long_low" controls>
+												<source src="audio/style_control/ssf064_01_various_64kb_117_long_well_huh_low.wav" type="audio/wav">
+											</audio>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="text-center align-middle">Medium</th>
+										<td class="text-center align-middle">
+											<audio id="audio_medium_high" controls>
+												<source src="audio/style_control/ssf064_01_various_64kb_117_medium_well_huh_high.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="audio_medium_medium" controls>
+												<source src="audio/style_control/ssf064_01_various_64kb_117_medium_well_huh_medium.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="audio_medium_low" controls>
+												<source src="audio/style_control/ssf064_01_various_64kb_117_medium_well_huh_low.wav" type="audio/wav">
+											</audio>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="text-center align-middle">Short</th>
+										<td class="text-center align-middle">
+											<audio id="audio_short_high" controls>
+												<source src="audio/style_control/ssf064_01_various_64kb_117_short_well_huh_high.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="audio_short_medium" controls>
+												<source src="audio/style_control/ssf064_01_various_64kb_117_short_well_huh_medium.wav" type="audio/wav">
+											</audio>
+										</td>
+										<td class="text-center align-middle">
+											<audio id="audio_short_low" controls>
+												<source src="audio/style_control/ssf064_01_various_64kb_117_short_well_huh_low.wav" type="audio/wav">
+											</audio>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				
 				
 					<div class="row">
 						<div class="col-lg-12 ml-auto">
