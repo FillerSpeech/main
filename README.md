@@ -10,8 +10,6 @@
 
 - [x] Checkpoint
 - [X] Model
-- [ ] Dataloader 
-- [ ] Inference with Gradio
 - [ ] Training Code
 - [ ] Usage Instructions
 
