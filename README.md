@@ -29,6 +29,7 @@ gdown --folder https://drive.google.com/drive/folders/1Kqm1wXRl50Hnz3qrxPwddj4s_
 
 ## Usage Instructions
 
-
+- [LLM-based Filler Prediction](https://github.com/FillerSpeech/main/tree/main/filler_prediction)
+- Filler Speech Synthesis
 ---
 
