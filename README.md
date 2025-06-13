@@ -66,7 +66,6 @@ There are four types of prompts:
 ---
 
 ## Dataset
-
 ### Full Dataset Paths
 - **Training Dataset:** `./filler_prediction/data/filler_pred_train.json`
 - **Validation Dataset:** `./filler_prediction/data/filler_pred_valid.json`
