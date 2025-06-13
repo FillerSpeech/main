@@ -6,11 +6,11 @@ from g2p_en.expand import normalize_numbers
 from nltk import pos_tag
 from nltk.tokenize import TweetTokenizer
 
-from data_gen.tts.txt_processors.base_text_processor import (
+from speech_synthesis.data_gen.tts.txt_processors.base_text_processor import (
     BaseTxtProcessor,
     register_txt_processors,
 )
-from utils.text.text_encoder import PUNCS, is_sil_phoneme
+from utils.text.text_encoder import PUNCS
 
 
 class EnG2p(G2p):

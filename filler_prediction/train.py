@@ -20,7 +20,7 @@ import torch
 import torch.backends.cudnn as cudnn
 
 from utils import *
-from config import Config
+from filler_prediction.config import Config
 from dist_utils import get_rank, init_distributed_mode
 from models import load_model
 from dataset import FillerDataset
@@ -74,11 +74,18 @@ def main():
     model = load_model(model_config)
     if cfg.config.model.filler_mode :
         # build datasets
-        datasets = {
-            "train": FillerDataset(data_config.train_ann_path, cfg),
-            "valid": FillerDataset(data_config.valid_ann_path, cfg),
-            "test": FillerDataset(data_config.test_ann_path, cfg),
-        }
+        if hasattr(cfg.config, "generate"):
+            datasets = {
+                "train": FillerDataset(data_config.valid_ann_path, cfg), # placeholder; not used during generation
+                "valid": FillerDataset(data_config.valid_ann_path, cfg),
+                "test": FillerDataset(data_config.test_ann_path, cfg),
+            }
+        else:
+            datasets = {
+                "train": FillerDataset(data_config.train_ann_path, cfg),
+                "valid": FillerDataset(data_config.valid_ann_path, cfg),
+                "test": FillerDataset(data_config.test_ann_path, cfg),
+            }
 
     # build runner
     runner = Runner(cfg, model, datasets, job_id)

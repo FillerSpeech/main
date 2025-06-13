@@ -13,7 +13,7 @@
 # limitations under the License.
 
 model:
-  filler_mode : "all" # filler prediction task # 어떤거 예측할지? # only_f, all, only_dur, only_pitch
+  filler_mode : "all" # filler prediction task # only_f, all, only_dur, only_pitch
   pitch_type : "rel_f0" #"rel_f0" "abs_f0"
 
   llama_path: "./ckpts/vicuna-7b-v1.5" # vicuna-7b-v1.5 ckpt here

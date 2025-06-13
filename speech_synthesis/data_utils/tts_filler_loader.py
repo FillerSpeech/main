@@ -1,34 +1,26 @@
 import torch.optim
 import torch.utils.data
-import numpy as np
-import torch
 import torch.optim
 import torch.utils.data
 import torch.distributions
 from utils.commons.dataset_utils import (
     BaseDataset,
-    collate_1d_or_2d,
 )
-from utils.text.text_encoder import build_token_encoder
-from utils.text import intersperse, intersperse_exp
 import json
-from data_gen.tts.txt_processors.base_text_processor import get_txt_processor_cls
+from speech_synthesis.data_gen.tts.txt_processors.base_text_processor import get_txt_processor_cls
 from utils.audio import librosa_wav2spec
 
 
 
 import torch.optim
 import torch.utils.data
-import numpy as np
 import torch
 import torch.optim
 import torch.utils.data
 import torch.distributions
-from utils.audio.pitch.utils import norm_interp_f0, denorm_f0
+from utils.audio.pitch.utils import norm_interp_f0
 from utils.commons.dataset_utils import (
     collate_1d_or_2d,
-    collate_1d,
-    collate_2d,
 )
 from tasks.tts.dataset_utils import BaseSpeechDataset
 from utils.commons.indexed_datasets import IndexedDataset

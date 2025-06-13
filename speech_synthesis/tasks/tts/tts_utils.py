@@ -3,7 +3,6 @@ import torch
 
 from data_gen.tts.base_binarizer import BaseBinarizer
 from data_gen.tts.base_preprocess import BasePreprocessor
-from data_gen.tts.txt_processors.base_text_processor import get_txt_processor_cls
 from utils.commons.hparams import hparams, set_hparams
 
 

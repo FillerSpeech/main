@@ -60,15 +60,15 @@ There are four types of prompts:
 ## Dataset
 
 ### Full Dataset Paths
-- **Training Dataset:** `./data/filler_pred_train.json`
-- **Validation Dataset:** `./data/filler_pred_valid.json`
-- **Test Dataset:** `./data/filler_pred_test.json`
+- **Training Dataset:** `./filler_prediction/data/filler_pred_train.json`
+- **Validation Dataset:** `./filler_prediction/data/filler_pred_valid.json`
+- **Test Dataset:** `./filler_prediction/data/filler_pred_test.json`
 
 ### Test Dataset Paths for Each Prompt
-- For Prompt 1: `./data/filler_pred_test_1.json`
-- For Prompt 2: `./data/filler_pred_test_2.json`
-- For Prompt 3: `./data/filler_pred_test_3.json`
-- For Prompt 4: `./data/filler_pred_test_4.json`
+- For Prompt 1: `./filler_prediction/data/filler_pred_test_1.json`
+- For Prompt 2: `./filler_prediction/data/filler_pred_test_2.json`
+- For Prompt 3: `./filler_prediction/data/filler_pred_test_3.json`
+- For Prompt 4: `./filler_prediction/data/filler_pred_test_4.json`
 
 ---
 
@@ -101,7 +101,7 @@ You can modify the inference settings in the `test_config_filler_pred.yaml` file
   ```
 - **Evaluation Mode Setting:**
   ```yaml
-  config.run.evaluate: False
+  config.run.evaluate: True
   ```
 
 To start inference, run:

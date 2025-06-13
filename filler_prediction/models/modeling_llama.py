@@ -14,7 +14,7 @@ from transformers.modeling_outputs import BaseModelOutputWithPast, CausalLMOutpu
 from transformers.modeling_utils import PreTrainedModel
 from transformers.utils import add_start_docstrings, add_start_docstrings_to_model_forward, logging, replace_return_docstrings
 from transformers.models.llama.configuration_llama import LlamaConfig
-
+from transformers import StoppingCriteria, StoppingCriteriaList
 
 logger = logging.get_logger(__name__)
 
@@ -327,6 +327,7 @@ class LlamaPreTrainedModel(PreTrainedModel):
     _no_split_modules = ["LlamaDecoderLayer"]
     _keys_to_ignore_on_load_unexpected = [r"decoder\.version"]
 
+
     def _init_weights(self, module):
         std = self.config.initializer_range
         if isinstance(module, nn.Linear):
@@ -434,7 +435,6 @@ class LlamaModel(LlamaPreTrainedModel):
 
     def get_input_embeddings(self):
         return self.embed_tokens
-
     def set_input_embeddings(self, value):
         self.embed_tokens = value
 
@@ -605,6 +605,9 @@ class LlamaForCausalLM(LlamaPreTrainedModel):
 
         # Initialize weights and apply final processing
         self.post_init()
+
+    # def generate(self, *args, **kwargs):
+    #     return GenerationMixin.generate(self, *args, **kwargs)
 
     def get_input_embeddings(self):
         return self.model.embed_tokens

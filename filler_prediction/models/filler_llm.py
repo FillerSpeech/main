@@ -24,7 +24,7 @@ import torch.nn.functional as F
 from transformers import LlamaTokenizer, StoppingCriteriaList, AutoTokenizer 
 from peft import LoraConfig, TaskType, get_peft_model 
 
-from dist_utils import get_rank
+from filler_prediction.dist_utils import get_rank
 
 from .modeling_llama import LlamaForCausalLM
 from .utils import StoppingCriteriaSub, concat_all_gather, all_gather_with_grad
@@ -114,6 +114,7 @@ class FillerLLM(nn.Module):
         
         logging.info('Loading LLaMA Model')
 
+
         if self.infer_mode:
             from transformers import AutoModelForCausalLM
             
@@ -141,7 +142,8 @@ class FillerLLM(nn.Module):
         self.llama_model.resize_token_embeddings(len(self.llama_tokenizer))
         
         logging.info('Loading LLaMA Done')
-        
+
+
         if self.lora:
             self.peft_config = LoraConfig(
                 task_type=TaskType.CAUSAL_LM, 
@@ -364,27 +366,28 @@ class FillerLLM(nn.Module):
             return {"loss": loss, "correct": correct, "total": total}
 
         return {"loss": loss}
-            
-        
+
+
 
     def generate(self, samples, generate_cfg, prompts=None):
         if self.filler_mode :
             tgt_sen = samples["transcript"]
 
             tgt_filler = samples["filler"]
-            dur = samples["duration"] 
+            dur = samples["duration"]
             tgt_sen_pos = samples["text"]
-            
+
             if self.pitch_type == 'abs_f0':
                 f0 = samples["abs_f0"]
             else : #rel_f0
                 f0 = samples["rel_f0"]
-            
+
             if self.prompt_dict:
-                speech_embeds, speech_atts, lora_text_mask, lora_emotion_mask = self.filler_prompt_wrap(tgt_sen, tgt_sen_pos, tgt_filler, dur, f0, prompts, multi_prompt=self.multi_prompt)       
+                # speech_embeds, speech_atts, lora_text_mask, lora_emotion_mask = self.filler_prompt_wrap(tgt_sen, tgt_sen_pos, tgt_filler, dur, f0, prompts, multi_prompt=self.multi_prompt)
+                speech_embeds, speech_atts = self.filler_prompt_wrap(tgt_sen, tgt_sen_pos, tgt_filler, dur, f0, prompts, multi_prompt=self.multi_prompt)
 
         batch_size = speech_embeds.shape[0]
-        
+
         bos = torch.ones(
             [batch_size, 1],
             dtype=torch.int32,
@@ -395,10 +398,10 @@ class FillerLLM(nn.Module):
 
         embeds = torch.cat([bos_embeds, speech_embeds], dim=1)
         attns = torch.cat([atts_bos, speech_atts], dim=1)
-        
-        stop_words_ids = [torch.tensor([2]).cuda()]  
+
+        stop_words_ids = [torch.tensor([2]).cuda()]
         stopping_criteria = StoppingCriteriaList([StoppingCriteriaSub(stops=stop_words_ids)])
-        
+
         if 'Llama' in self.llama_path: # Llama-3.1-8B-Instruct :
             outputs = self.llama_model.generate(
                 inputs_embeds=embeds,
@@ -427,7 +430,7 @@ class FillerLLM(nn.Module):
                 length_penalty=generate_cfg.get("length_penalty", 1.0),
                 attention_mask=attns,
                 )
-                
+
         text = self.llama_tokenizer.batch_decode(outputs, add_special_tokens=False)
 
         return text

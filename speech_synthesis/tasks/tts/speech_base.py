@@ -10,7 +10,7 @@ import torch.optim
 import torch.utils.data
 from tqdm import tqdm
 import utils
-from tasks.tts.tts_utils import VocoderInfer, parse_mel_losses, parse_dataset_configs
+from speech_synthesis.tasks.tts.tts_utils import VocoderInfer, parse_mel_losses, parse_dataset_configs
 from utils.audio.align import mel2token_to_dur
 from utils.audio.io import save_wav
 from utils.audio.pitch_extractors import extract_pitch_simple

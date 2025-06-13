@@ -13,31 +13,30 @@
 # limitations under the License.
 
 model:
-  filler_mode : "all" # filler prediction task # 어떤거 예측할지? # only_f, all, only_dur, only_pitch
+  filler_mode : "all" # filler prediction task # only_f, all, only_dur, only_pitch
   pitch_type : "rel_f0" #"rel_f0" "abs_f0"
 
-  llama_path: "./ckpts/vicuna-7b-v1.5" # vicuna-7b-v1.5 ckpt here
+  llama_path: "lmsys/vicuna-7b-v1.5"
 
   # LoRA
   lora: True
-  lora_ckpt: "./ckpts/checkpoint_best.pth" 
+  lora_ckpt: "./filler_prediction/ckpts/checkpoint_best.pth"
 
   multi_prompt: True
   prompt_template: "{}\nASSISTANT:"
-  prompt_path: "./prompts/filler_all_pred_train_prompt.json"
-  test_prompt_path: "./prompts/filler_all_pred_test_prompt.json"
+  prompt_path: "./filler_prediction/prompts/filler_all_pred_train_prompt.json"
+  test_prompt_path: "./filler_prediction/prompts/filler_all_pred_test_prompt.json"
   max_txt_len: 300
   end_sym: "</s>"
 
 datasets:
-  train_ann_path: "./data/filler_pred_train.json"
-  valid_ann_path: "./data/filler_pred_valid.json"
-  test_ann_path: "./data/filler_pred_test_1.json"
+  valid_ann_path: "./filler_prediction/data/filler_pred_valid.json"
+  test_ann_path: "./filler_prediction/data/filler_pred_test_1.json"
 
 run:
   # log & settings
   seed: 42
-  output_dir: "./logs/filler_pred"
+  output_dir: "./filler_prediction/logs/filler_pred"
   evaluate: True # if True, only evaluate model on test data
 
   log_freq: 5

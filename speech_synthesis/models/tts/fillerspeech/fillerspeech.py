@@ -28,7 +28,7 @@ from models.commons.layers import Embedding
 from utils.audio.pitch.utils import denorm_f0, f0_to_coarse, norm_f0
 from utils.audio.cwt import cwt2f0, get_lf0_cwt
 import numpy as np
-from models.commons.nar_tts_modules import PitchPredictor
+from speech_synthesis.models.commons.nar_tts_modules import PitchPredictor
 from models.tts.matchatts.text_encoder import MultiHeadAttention, LayerNorm, FFN, CrossAttention
 
 
