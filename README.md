@@ -20,6 +20,58 @@ gdown --folder https://drive.google.com/drive/folders/1OqGAL0iVn9xDPA8kAgOD64A8x
 gdown --folder https://drive.google.com/drive/folders/1JfHPq2Li3Sjm4_T0PeavmjLE7_nXmwxB
 ~~~
 ---
+# Filler-inclusive Dataset Construction Pipeline
+This repository provides a reproducible pipeline to build a filler-inclusive speech dataset from LibriHeavy.
+a single set of features.
+
+> How to run stages \
+> Every command below uses: \
+> ``` bash data/run_data_preparation.sh <stage> <stop_stage> ``` \
+> Omit the arguments to run all stages end-to-end.
+
+## Run Everything at Once
+```bash data/run_data_preparation.sh```
+
+## Download the base dataset
+```bash data/run_data_preparation.sh 0 0```
+This clones helper code and prepares LibriHeavy under ./data/libriheavy. \
+Alternatively, download/prepare LibriHeavy yourself by following the upstream guide: \
+https://github.com/k2-fsa/libriheavy \
+(Place it at ./data/libriheavy.) 
+
+## Stage-by-stage
+### Stage 1 — Select filler-inclusive examples from the base dataset
+Parses LibriHeavy manifests and writes filler-inclusive cut lists: \
+./data/libriheavy/temp/filler_inclusive_<subset>.jsonl.gz \
+(Subsets: small, large, dev, test_clean, test_other, test_clean_large, test_other_large)
+### Stages 2–3 — Untar base audio and segment selected audio
+• Untars ./data/libriheavy/download/librilight/<subset>.tar. \
+• Segments audio according to the filler-inclusive JSONL, producing WAVs under: \
+./data/libriheavy-fiiler/audio/<subset>/**.wav
+
+### Stage 4 — Text normalization
+Runs text normalization (e.g., Whisper→NeMo style) and saves normalized transcripts aligned to the same IDs under ./data/libriheavy-fiiler. 
+### Stages 5–6 — Install MFA and extract durations via alignment 
+• Ensures Montreal Forced Aligner (MFA) is installed; otherwise the script prints: \
+Please install MFA: https://montreal-forced-aligner.readthedocs.io/en/latest/getting_started.html \
+• Downloads pretrained acoustic and dictionary models (english_mfa). \
+• Aligns each subset to generate TextGrid files and durations: \
+./data/libriheavy-fiiler/textgrids/<subset>/**.TextGrid \
+Tip: MFA parallelism can be set with -j $(nproc). For I/O-bound storage, a moderate -j (e.g., 8–16) may outperform very large values.
+### Stage 7 — Pitch extraction
+Extracts F0 (pitch) per utterance (e.g., via Praat/Parselmouth) and saves: \
+./data/libriheavy-fiiler/pitch/<subset>/**.npy 
+
+### Stage 8 — Gender classification
+Predicts speaker gender labels per utterance/speaker and stores them under the output tree.
+### Stage 9 — Feature integration
+Merges normalized text, MFA durations/TextGrids, pitch, and gender into unified json per subset for downstream tasks (filler prediction, TTS, etc.).
+
+```
+bash data/run_data_preparation.sh 0 0
+```
+
+---
 
 # Filler Prediction
 ## Prompt Types
