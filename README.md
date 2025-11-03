@@ -4,7 +4,7 @@ Recent advancements in speech synthesis have significantly improved the audio qu
 
 
 ---
-### This repository is temporarily unavailable to the public due to industry-academic collaboration requirements. The source code has been removed accordingly.
+### This repository is temporarily unavailable to the public due to industry-academic collaboration requirements. 
 
 
 
